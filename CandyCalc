@@ -21,7 +21,7 @@ public class CandyCalculator
 		// Create a Scanner object to read input.
 	      Scanner keyboard = new Scanner (System.in);
 	      
-	      int CANDY = 230;		// # of calories for a candy bar. Constant value
+	      double CANDY = 230.0;		// # of calories for a candy bar. Constant value
 	      double weight;		// User's weight
 	      double height;		// User's height
 	      double age;			// User's age
@@ -74,7 +74,7 @@ public class CandyCalculator
 	      System.out.println("Enter A,B,C, or D.");
 	      
 	      active = keyboard.nextLine();
-	      if (active == "A" || active == "B" || active == "C" || active == "D") {
+	      if (active != "A" || active != "B" || active != "C" || active != "D") {    
 	    	  System.out.println("ERROR: The following input was an error. \n"
 	    			  				+ "Program will now be terminated, Goodbye.");
 	    	  System.exit(0);
@@ -89,7 +89,7 @@ public class CandyCalculator
 	      
 	      //If else block to calculate number of chocolate bars per day depended on BMR with active level
 	      if (active == "A") {
-	    	  bars = ((BMR * 1.2) / CANDY); }
+	    	  bars = ((BMR * 1.2) / CANDY); }    //dividing by int will give wrong answer, i fixed it for you
 	      else if (active == "B") {
 	    	  bars = ((BMR * 1.3) / CANDY); }
 	      else if (active == "C") {
